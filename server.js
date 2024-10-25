@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import express from "express";
 
 // NOTE: This assert is causing a warning on pnpm dev
-import resume from "./src/assets/json/resume.json" assert { type: "json" };
+import resume from "./json/resume.json" assert { type: "json" };
 
 // Constants
 const isProduction = process.env.NODE_ENV === "production";
