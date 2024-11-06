@@ -1,4 +1,4 @@
-import { Resume } from "../types/resume";
+import { Resume } from "../types/Resume";
 import { getResumeApiClient } from "./resumeApiClient";
 
 export const getResume = async () => {
