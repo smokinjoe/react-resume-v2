@@ -4,7 +4,7 @@ export type Resume = {
   email: string;
   phone: number;
   address: Address;
-  technicalSkills: TechnicalSkill[];
+  technicalSkills: string[];
   employmentHistory: EmploymentHistory[];
   languages: Language[];
   education: School[];
@@ -13,15 +13,10 @@ export type Resume = {
 };
 
 export type Address = {
-  street: string;
+  street?: string;
   city: string;
   state: string;
-  zip: number;
-};
-
-export type TechnicalSkill = {
-  description: string;
-  score: number;
+  zip?: number;
 };
 
 export type EmploymentHistory = {
