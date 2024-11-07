@@ -2,18 +2,19 @@ import { useContext } from "react";
 import { Grid, Text, Title } from "@mantine/core";
 import { ResumeContext } from "../../context/ResumeContext";
 
-export const Header = () => {
-  const data = useContext(ResumeContext);
+/**
+ * Pull out the Grid.Col and place back in Resume.tsx if possible
+ * Would need me to create two new components for name and then address
+ */
 
-  if (!data) {
-    return null;
-  }
+export const Header = () => {
+  const resume = useContext(ResumeContext);
 
   return (
     <>
       <Grid.Col span={8}>
         <Title style={{ fontSize: "56px" }} order={1}>
-          {data.name}
+          {resume.name}
         </Title>
         <Text>
           An engineer looking for challenges and an opportunity to build great
@@ -21,12 +22,12 @@ export const Header = () => {
         </Text>
       </Grid.Col>
       <Grid.Col span={4}>
-        <Text>{data.address.street}</Text>
+        <Text>{resume.address.street}</Text>
         <Text>
-          {data.address.city}, {data.address.state} {data.address.zip}
+          {resume.address.city}, {resume.address.state} {resume.address.zip}
         </Text>
-        <Text fw={700}>{data.phone}</Text>
-        <Text fw={700}>{data.email}</Text>
+        <Text fw={700}>{resume.phone}</Text>
+        <Text fw={700}>{resume.email}</Text>
       </Grid.Col>
     </>
   );
