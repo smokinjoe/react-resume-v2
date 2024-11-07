@@ -47,6 +47,47 @@ const Resume = () => {
               <Text>{JSON.stringify(exp.experience)}</Text>
             </div>
           ))}
+
+          <Title order={2}>Education</Title>
+          {data.education.map((edu) => (
+            <div key={edu.name}>
+              <Text>
+                {edu.dateStart} - {edu.dateEnd}
+              </Text>
+              <Text>{edu.name}</Text>
+              <Text>{edu.degree}</Text>
+            </div>
+          ))}
+
+          <Title order={2}>Projects</Title>
+          {data.projects.map((project) => (
+            <div key={project.title}>
+              <Text>{project.title}</Text>
+              <Text>{project.url}</Text>
+              <Text>{project.description}</Text>
+            </div>
+          ))}
+        </Grid.Col>
+        <Grid.Col span={4}>
+          <Title order={2}>Skills</Title>
+          {data.technicalSkills.map((skill) => (
+            <>
+              <Text>{skill.description}</Text>
+              <Text>{skill.score}</Text>
+            </>
+          ))}
+
+          <Title order={2}>Languages</Title>
+          {data.languages.map((language) => (
+            <>
+              <Text>{language.name}</Text>
+              <Text>{language.proficiency}</Text>
+            </>
+          ))}
+        </Grid.Col>
+
+        <Grid.Col span={12}>
+          <Title order={2}>References available upon request</Title>
         </Grid.Col>
       </Grid>
     </div>

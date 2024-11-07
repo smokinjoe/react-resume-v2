@@ -40,7 +40,7 @@ export type ExperienceItem = {
 
 export type Language = {
   name: string;
-  score: number;
+  proficiency: number;
 };
 
 export type Project = {
@@ -51,6 +51,7 @@ export type Project = {
 
 export type School = {
   name: string;
-  major: string;
-  graduationDate: string;
+  degree: string;
+  dateStart: string;
+  dateEnd: string;
 };
