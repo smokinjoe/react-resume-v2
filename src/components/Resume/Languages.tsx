@@ -17,11 +17,11 @@ export const Languages = () => {
       >
         Languages
       </Title>
-      {resume.languages.map((language) => (
-        <>
+      {resume.languages.map((language, index) => (
+        <div key={index}>
           <Text>{language.name}</Text>
           <Text>{language.proficiency}</Text>
-        </>
+        </div>
       ))}
     </>
   );

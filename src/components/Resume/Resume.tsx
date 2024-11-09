@@ -5,7 +5,7 @@ import { ResumeContext } from "../../context/ResumeContext";
 import { Header } from "./Header";
 import { EmploymentHistory } from "./EmploymentHistory";
 import { Education } from "./Education";
-import { Projects } from "./Proejcts";
+import { Projects } from "./Projects";
 import { Skills } from "./Skills";
 import { Languages } from "./Languages";
 

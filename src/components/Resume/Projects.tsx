@@ -18,8 +18,8 @@ export const Projects = () => {
         Projects
       </Title>
       {resume.projects.map((project) => (
-        <div key={project.title}>
-          <Text>{project.title}</Text>
+        <div key={project.name}>
+          <Text>{project.name}</Text>
           <Text>{project.url}</Text>
           <Text>{project.description}</Text>
         </div>

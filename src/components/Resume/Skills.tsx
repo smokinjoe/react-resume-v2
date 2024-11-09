@@ -18,9 +18,9 @@ export const Skills = () => {
         Skills
       </Title>
       {resume.technicalSkills.map((skill, index) => (
-        <>
-          <Text key={index}>{skill}</Text>
-        </>
+        <div key={index}>
+          <Text>{skill}</Text>
+        </div>
       ))}
     </>
   );
