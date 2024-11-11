@@ -1,4 +1,4 @@
-import { Grid, Title } from "@mantine/core";
+import { Container, Grid, Title } from "@mantine/core";
 
 import { useGetResume } from "../../hooks/useGetResume";
 import { ResumeContext } from "../../context/ResumeContext";
@@ -26,8 +26,8 @@ const Resume = () => {
 
   return (
     <ResumeContext.Provider value={data}>
-      <div>
-        <Grid>
+      <Container>
+        <Grid gutter="65">
           <Header />
           <Grid.Col span={8}>
             <EmploymentHistory />
@@ -43,7 +43,7 @@ const Resume = () => {
             <Title order={2}>{data.references}</Title>
           </Grid.Col>
         </Grid>
-      </div>
+      </Container>
     </ResumeContext.Provider>
   );
 };

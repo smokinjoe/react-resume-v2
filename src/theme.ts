@@ -18,5 +18,12 @@ export const theme = createTheme({
         },
       },
     },
+    List: {
+      styles: {
+        root: {
+          textAlign: "left",
+        },
+      },
+    },
   },
 });

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Title, Text } from "@mantine/core";
+import { Title, Text, List, Space } from "@mantine/core";
 import { ResumeContext } from "../../context/ResumeContext";
 
 export const EmploymentHistory = () => {
@@ -17,14 +17,35 @@ export const EmploymentHistory = () => {
       >
         Experience
       </Title>
-      {resume.employmentHistory.map((exp) => (
-        <div key={exp.company}>
-          <Text>{exp.company}</Text>
-          <Text>{exp.title}</Text>
-          <Text>
-            {exp.dateStart} - {exp.dateEnd}
+      <Space h="md" />
+
+      {resume.employmentHistory.map((job) => (
+        <div key={job.company}>
+          <Title order={3} fw="800">
+            {job.company},{" "}
+            <Text style={{ display: "inline" }} size="xl">
+              {job.location} —
+            </Text>
+            <Text style={{ display: "inline" }} size="xl" fs="italic">
+              {job.title}
+            </Text>
+          </Title>
+
+          <Text
+            style={{ fontFamily: "Open Sans, sans-serif", color: "#666666" }}
+          >
+            {job.dateStart} - {job.dateEnd}
           </Text>
-          <Text>{JSON.stringify(exp.experience)}</Text>
+
+          <Space h="xs" />
+
+          <List center={false} withPadding={true}>
+            {job.experience.map((responsibility, index) => (
+              <List.Item key={index}>{responsibility.description}</List.Item>
+            ))}
+          </List>
+
+          <Space h="xl" />
         </div>
       ))}
     </>
