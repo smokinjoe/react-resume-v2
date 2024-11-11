@@ -1,6 +1,30 @@
 import { useContext } from "react";
-import { Text, Title } from "@mantine/core";
+import { Space, Text, Title } from "@mantine/core";
 import { ResumeContext } from "../../context/ResumeContext";
+
+const MaxDotsCount = 5;
+
+const renderDots = (proficiencyCount: number) => {
+  const dotsArray = [];
+
+  for (let i = 0; i < MaxDotsCount; i++) {
+    if (i < proficiencyCount) {
+      dotsArray.push(
+        <Text size="lg" span>
+          ⏺{" "}
+        </Text>
+      );
+    } else {
+      dotsArray.push(
+        <Text style={{ fontSize: "22px" }} span>
+          ○{" "}
+        </Text>
+      );
+    }
+  }
+
+  return dotsArray.map((dot) => dot);
+};
 
 export const Languages = () => {
   const resume = useContext(ResumeContext);
@@ -17,11 +41,15 @@ export const Languages = () => {
       >
         Languages
       </Title>
+      <Space h="md" />
       {resume.languages.map((language, index) => (
-        <div key={index}>
-          <Text>{language.name}</Text>
-          <Text>{language.proficiency}</Text>
-        </div>
+        <>
+          <div key={index}>
+            <Text>{language.name}</Text>
+            <Text>{renderDots(language.proficiency)}</Text>
+          </div>
+          <Space h="sm" />
+        </>
       ))}
     </>
   );

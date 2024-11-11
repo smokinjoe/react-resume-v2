@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Text, Title } from "@mantine/core";
+import { Space, Text, Title } from "@mantine/core";
 import { ResumeContext } from "../../context/ResumeContext";
 
 export const Skills = () => {
@@ -17,10 +17,18 @@ export const Skills = () => {
       >
         Skills
       </Title>
+      <Space h="md" />
       {resume.technicalSkills.map((skill, index) => (
-        <div key={index}>
-          <Text>{skill}</Text>
-        </div>
+        <>
+          <div key={index}>
+            <Text>{skill}</Text>
+          </div>
+          {index === resume.technicalSkills.length - 1 ? (
+            <Space h="xl" />
+          ) : (
+            <Space h="sm" />
+          )}
+        </>
       ))}
     </>
   );

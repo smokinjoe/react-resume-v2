@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Title, Text } from "@mantine/core";
+import { Title, Text, Space } from "@mantine/core";
 import { ResumeContext } from "../../context/ResumeContext";
 
 export const Education = () => {
@@ -17,15 +17,30 @@ export const Education = () => {
       >
         Education
       </Title>
+      <Space h="md" />
+
       {resume.education.map((edu) => (
         <div key={edu.name}>
-          <Text>
-            {edu.dateStart} - {edu.dateEnd}
+          <Title order={3} fw="800">
+            {edu.name}
+            <Text span size="xl">
+              {" "}
+              —{" "}
+            </Text>
+            <Text span size="xl" fs="italic">
+              {edu.degree}
+            </Text>
+          </Title>
+
+          <Text
+            style={{ fontFamily: "Open Sans, sans-serif", color: "#666666" }}
+          >
+            {edu.dateEnd}
           </Text>
-          <Text>{edu.name}</Text>
-          <Text>{edu.degree}</Text>
         </div>
       ))}
+
+      <Space h="xl" />
     </>
   );
 };

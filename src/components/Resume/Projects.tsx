@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Text, Title } from "@mantine/core";
+import { Space, Text, Title } from "@mantine/core";
 import { ResumeContext } from "../../context/ResumeContext";
 
 export const Projects = () => {
@@ -17,11 +17,27 @@ export const Projects = () => {
       >
         Projects
       </Title>
+
+      <Space h="md" />
+
       {resume.projects.map((project) => (
         <div key={project.name}>
-          <Text>{project.name}</Text>
-          <Text>{project.url}</Text>
+          <Title order={3} fw="800">
+            {project.name}
+
+            <Text span size="xl" fs="italic">
+              <Text span size="xl">
+                {" "}
+                —{" "}
+              </Text>
+              <a href={project.url} target="_blank" rel="noreferrer">
+                Source
+              </a>
+            </Text>
+          </Title>
+
           <Text>{project.description}</Text>
+          <Space h="xs" />
         </div>
       ))}
     </>
