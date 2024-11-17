@@ -10,13 +10,13 @@ const renderDots = (proficiencyCount: number) => {
   for (let i = 0; i < MaxDotsCount; i++) {
     if (i < proficiencyCount) {
       dotsArray.push(
-        <Text size="lg" span>
+        <Text size="lg" span key={i}>
           ⏺{" "}
         </Text>
       );
     } else {
       dotsArray.push(
-        <Text style={{ fontSize: "22px" }} span>
+        <Text style={{ fontSize: "22px" }} span key={i}>
           ○{" "}
         </Text>
       );
@@ -43,13 +43,11 @@ export const Languages = () => {
       </Title>
       <Space h="md" />
       {resume.languages.map((language, index) => (
-        <>
-          <div key={index}>
-            <Text>{language.name}</Text>
-            <Text>{renderDots(language.proficiency)}</Text>
-          </div>
+        <div key={index}>
+          <Text>{language.name}</Text>
+          <Text>{renderDots(language.proficiency)}</Text>
           <Space h="sm" />
-        </>
+        </div>
       ))}
     </>
   );
