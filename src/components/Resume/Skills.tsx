@@ -19,16 +19,14 @@ export const Skills = () => {
       </Title>
       <Space h="md" />
       {resume.technicalSkills.map((skill, index) => (
-        <>
-          <div key={index}>
-            <Text>{skill}</Text>
-          </div>
+        <div key={index}>
+          <Text>{skill}</Text>
           {index === resume.technicalSkills.length - 1 ? (
             <Space h="xl" />
           ) : (
             <Space h="sm" />
           )}
-        </>
+        </div>
       ))}
     </>
   );

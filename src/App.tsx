@@ -5,7 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { MantineProvider } from "@mantine/core";
 
 import { theme } from "./theme";
-import Vite from "./components/Vite/Vite";
+// import Vite from "./components/Vite/Vite";
 import Resume from "./components/Resume/Resume";
 
 const queryClient = new QueryClient();
@@ -13,7 +13,7 @@ const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Vite />,
+    element: <Resume />,
   },
   {
     path: "/resume",
