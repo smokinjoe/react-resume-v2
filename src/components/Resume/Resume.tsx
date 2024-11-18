@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Container, Grid, Title } from "@mantine/core";
+import { Container, Grid, Space, Title } from "@mantine/core";
 
 import { ResumeContext } from "../../context/ResumeContext";
 
@@ -15,6 +15,7 @@ export const Resume = () => {
 
   return (
     <Container>
+      <Space h="xl" className="no-print" />
       <Grid gutter="65">
         <Header />
         <Grid.Col span={8}>

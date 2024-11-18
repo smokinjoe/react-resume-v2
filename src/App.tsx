@@ -7,6 +7,8 @@ import { MantineProvider } from "@mantine/core";
 import { theme } from "./theme";
 import { ResumeContainer } from "./components/Resume/ResumeContainer";
 
+import "./print.css";
+
 const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
