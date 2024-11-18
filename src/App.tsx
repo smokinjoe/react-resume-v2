@@ -5,19 +5,20 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { MantineProvider } from "@mantine/core";
 
 import { theme } from "./theme";
-// import Vite from "./components/Vite/Vite";
-import Resume from "./components/Resume/Resume";
+import { ResumeContainer } from "./components/Resume/ResumeContainer";
+
+import "./print.css";
 
 const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Resume />,
+    element: <ResumeContainer />,
   },
   {
     path: "/resume",
-    element: <Resume />,
+    element: <ResumeContainer />,
   },
 ]);
 
