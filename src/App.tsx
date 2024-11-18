@@ -5,7 +5,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { MantineProvider } from "@mantine/core";
 
 import { theme } from "./theme";
-// import Vite from "./components/Vite/Vite";
 import { ResumeContainer } from "./components/Resume/ResumeContainer";
 
 const queryClient = new QueryClient();
