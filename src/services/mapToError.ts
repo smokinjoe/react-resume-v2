@@ -1,12 +1,11 @@
 import { AxiosError } from "axios";
 import { HttpError } from "../utils/errors/HttpError";
-import { errorMap } from "../utils/errors/ErrorMap";
+import { errorMap } from "../utils/errors/errorMap";
 
 /**
  * Shared from Birddog API
  */
 interface IBirddogError extends Error {
-  errorType: string;
   statusCode: number;
   innerError?: Error;
 }
