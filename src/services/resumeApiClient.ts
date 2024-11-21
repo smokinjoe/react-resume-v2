@@ -17,7 +17,6 @@ const createHttpClient = (options?: HttpClientOptions): AxiosInstance => {
     (response) => response,
     (axiosError) => {
       const error = mapToError(axiosError);
-      console.log(error);
       return Promise.reject(error);
     }
   );

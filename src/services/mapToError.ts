@@ -1,7 +1,6 @@
 import { AxiosError } from "axios";
 import { HttpError } from "../utils/errors/HttpError";
-import { BadRequestError } from "../utils/errors/BadRequestError";
-import { NotFoundError } from "../utils/errors/NotFoundError";
+import { errorMap } from "../utils/errors/ErrorMap";
 
 /**
  * Shared from Birddog API
@@ -19,20 +18,9 @@ export const mapToError = (error: AxiosError<IBirddogError>): HttpError => {
       statusCode: error.response.status,
       innerError: error.response.data.innerError,
     };
-    switch (error.response.status) {
-      case 400:
-        return new BadRequestError(errorMessage, options);
-        break;
-      case 404:
-        return new NotFoundError(errorMessage, options);
-        break;
-      case 500:
-        return new HttpError(errorMessage, options);
-        break;
-      default:
-        return new HttpError(errorMessage, options);
-        break;
-    }
+
+    const ErrorConstructor = errorMap.get(error.response.status) ?? HttpError;
+    return new ErrorConstructor(errorMessage, options);
   }
   return new HttpError(error.message);
 };

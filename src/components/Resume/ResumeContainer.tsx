@@ -13,8 +13,6 @@ export const ResumeContainer = () => {
     return <Loading isLoading={isLoading} />;
   }
 
-  console.log("JOE: error: ", error);
-
   if (error) {
     return <ErrorMessage message={error.message} />;
   }
