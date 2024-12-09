@@ -1,11 +1,10 @@
 import { useAtom } from "jotai";
 import { Space, Text, Title } from "@mantine/core";
 
-import { resumeAtom } from "../../atoms/resume";
+import { skillsAtom } from "../../atoms/resume";
 
 export const Skills = () => {
-  const [resume] = useAtom(resumeAtom);
-  const { technicalSkills } = resume;
+  const [technicalSkills] = useAtom(skillsAtom);
 
   return (
     <>

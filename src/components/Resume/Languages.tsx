@@ -1,7 +1,7 @@
 import { useAtom } from "jotai";
 import { Space, Text, Title } from "@mantine/core";
 
-import { resumeAtom } from "../../atoms/resume";
+import { languagesAtom } from "../../atoms/resume";
 
 const MaxDotsCount = 5;
 
@@ -28,8 +28,7 @@ const renderDots = (proficiencyCount: number) => {
 };
 
 export const Languages = () => {
-  const [resume] = useAtom(resumeAtom);
-  const { languages } = resume;
+  const [languages] = useAtom(languagesAtom);
 
   return (
     <>

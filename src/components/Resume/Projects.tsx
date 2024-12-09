@@ -1,11 +1,10 @@
 import { useAtom } from "jotai";
 import { Space, Text, Title } from "@mantine/core";
 
-import { resumeAtom } from "../../atoms/resume";
+import { projectsAtom } from "../../atoms/resume";
 
 export const Projects = () => {
-  const [resume] = useAtom(resumeAtom);
-  const { projects } = resume;
+  const [projects] = useAtom(projectsAtom);
 
   return (
     <>
@@ -22,7 +21,7 @@ export const Projects = () => {
 
       <Space h="md" />
 
-      {resume.projects.map((project) => (
+      {projects.map((project) => (
         <div key={project.name}>
           <Title order={3} fw="800">
             {project.name}

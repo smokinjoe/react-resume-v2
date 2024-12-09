@@ -21,3 +21,11 @@ const defaultResume: Resume = {
 };
 
 export const resumeAtom = atom<Resume>(defaultResume);
+
+export const skillsAtom = atom((get) => get(resumeAtom).technicalSkills);
+export const employmentHistoryAtom = atom(
+  (get) => get(resumeAtom).employmentHistory
+);
+export const languagesAtom = atom((get) => get(resumeAtom).languages);
+export const educationAtom = atom((get) => get(resumeAtom).education);
+export const projectsAtom = atom((get) => get(resumeAtom).projects);
