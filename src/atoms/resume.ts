@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { atom } from "jotai";
 import { Resume } from "../types/Resume";
 
 const defaultResume: Resume = {
@@ -20,4 +20,4 @@ const defaultResume: Resume = {
   references: "",
 };
 
-export const ResumeContext = createContext<Resume>(defaultResume);
+export const resumeAtom = atom<Resume>(defaultResume);

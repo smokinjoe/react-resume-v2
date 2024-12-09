@@ -1,6 +1,7 @@
-import { useContext } from "react";
+import { useAtom } from "jotai";
 import { Grid, Space, Text, Title } from "@mantine/core";
-import { ResumeContext } from "../../context/ResumeContext";
+
+import { resumeAtom } from "../../atoms/resume";
 
 /**
  * Pull out the Grid.Col and place back in Resume.tsx if possible
@@ -8,7 +9,7 @@ import { ResumeContext } from "../../context/ResumeContext";
  */
 
 export const Header = () => {
-  const resume = useContext(ResumeContext);
+  const [resume] = useAtom(resumeAtom);
 
   const customCss = { fontFamily: "Open Sans, sans serif", fontSize: "18px" };
 

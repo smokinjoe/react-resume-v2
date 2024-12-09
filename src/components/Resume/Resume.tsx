@@ -1,7 +1,4 @@
-import { useContext } from "react";
 import { Container, Grid, Space, Title } from "@mantine/core";
-
-import { ResumeContext } from "../../context/ResumeContext";
 
 import { Header } from "./Header";
 import { EmploymentHistory } from "./EmploymentHistory";
@@ -9,9 +6,12 @@ import { Education } from "./Education";
 import { Projects } from "./Projects";
 import { Skills } from "./Skills";
 import { Languages } from "./Languages";
+import { useAtom } from "jotai";
+import { resumeAtom } from "../../atoms/resume";
 
 export const Resume = () => {
-  const { references } = useContext(ResumeContext);
+  const [resume] = useAtom(resumeAtom);
+  const { references } = resume;
 
   return (
     <Container>

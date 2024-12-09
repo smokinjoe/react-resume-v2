@@ -1,9 +1,11 @@
-import { useContext } from "react";
+import { useAtom } from "jotai";
 import { Title, Text, Space } from "@mantine/core";
-import { ResumeContext } from "../../context/ResumeContext";
+
+import { resumeAtom } from "../../atoms/resume";
 
 export const Education = () => {
-  const resume = useContext(ResumeContext);
+  const [resume] = useAtom(resumeAtom);
+  const { education } = resume;
 
   return (
     <>
@@ -19,7 +21,7 @@ export const Education = () => {
       </Title>
       <Space h="md" />
 
-      {resume.education.map((edu) => (
+      {education.map((edu) => (
         <div key={edu.name}>
           <Title order={3} fw="800">
             {edu.name}

@@ -1,5 +1,5 @@
 import "@mantine/core/styles.css";
-
+import { Provider as JotaiProvider } from "jotai";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { MantineProvider } from "@mantine/core";
@@ -25,9 +25,11 @@ const router = createBrowserRouter([
 function App() {
   return (
     <MantineProvider theme={theme}>
-      <QueryClientProvider client={queryClient}>
-        <RouterProvider router={router} />
-      </QueryClientProvider>
+      <JotaiProvider>
+        <QueryClientProvider client={queryClient}>
+          <RouterProvider router={router} />
+        </QueryClientProvider>
+      </JotaiProvider>
     </MantineProvider>
   );
 }

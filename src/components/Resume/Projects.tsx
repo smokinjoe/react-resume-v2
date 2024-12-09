@@ -1,9 +1,11 @@
-import { useContext } from "react";
+import { useAtom } from "jotai";
 import { Space, Text, Title } from "@mantine/core";
-import { ResumeContext } from "../../context/ResumeContext";
+
+import { resumeAtom } from "../../atoms/resume";
 
 export const Projects = () => {
-  const resume = useContext(ResumeContext);
+  const [resume] = useAtom(resumeAtom);
+  const { projects } = resume;
 
   return (
     <>

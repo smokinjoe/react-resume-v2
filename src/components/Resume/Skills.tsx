@@ -1,9 +1,11 @@
-import { useContext } from "react";
+import { useAtom } from "jotai";
 import { Space, Text, Title } from "@mantine/core";
-import { ResumeContext } from "../../context/ResumeContext";
+
+import { resumeAtom } from "../../atoms/resume";
 
 export const Skills = () => {
-  const resume = useContext(ResumeContext);
+  const [resume] = useAtom(resumeAtom);
+  const { technicalSkills } = resume;
 
   return (
     <>
@@ -18,10 +20,10 @@ export const Skills = () => {
         Skills
       </Title>
       <Space h="md" />
-      {resume.technicalSkills.map((skill, index) => (
+      {technicalSkills.map((skill, index) => (
         <div key={index}>
           <Text>{skill}</Text>
-          {index === resume.technicalSkills.length - 1 ? (
+          {index === technicalSkills.length - 1 ? (
             <Space h="xl" />
           ) : (
             <Space h="sm" />
