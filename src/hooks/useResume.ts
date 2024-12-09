@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useAtom } from "jotai";
 import { useQuery } from "@tanstack/react-query";
 
@@ -18,11 +17,9 @@ export const useResume = () => {
     ...reactQueryOptions,
   });
 
-  useEffect(() => {
-    if (data) {
-      setResume(data);
-    }
-  }, [data, setResume]);
+  if (data) {
+    setResume(data);
+  }
 
   return { resume, isLoading, error };
 };
