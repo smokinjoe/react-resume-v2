@@ -1,9 +1,9 @@
-import { useContext } from "react";
 import { Title, Text, List, Space } from "@mantine/core";
-import { ResumeContext } from "../../context/ResumeContext";
+
+import { useStore } from "../../store/resume";
 
 export const EmploymentHistory = () => {
-  const resume = useContext(ResumeContext);
+  const { employmentHistory } = useStore((state) => state.resume);
 
   return (
     <>
@@ -19,7 +19,7 @@ export const EmploymentHistory = () => {
       </Title>
       <Space h="md" />
 
-      {resume.employmentHistory.map((job) => (
+      {employmentHistory.map((job) => (
         <div key={job.company}>
           <Title order={3} fw="800">
             {job.company},{" "}

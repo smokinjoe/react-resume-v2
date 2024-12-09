@@ -1,6 +1,6 @@
-import { useContext } from "react";
 import { Grid, Space, Text, Title } from "@mantine/core";
-import { ResumeContext } from "../../context/ResumeContext";
+
+import { useStore } from "../../store/resume";
 
 /**
  * Pull out the Grid.Col and place back in Resume.tsx if possible
@@ -8,7 +8,7 @@ import { ResumeContext } from "../../context/ResumeContext";
  */
 
 export const Header = () => {
-  const resume = useContext(ResumeContext);
+  const { resume } = useStore();
 
   const customCss = { fontFamily: "Open Sans, sans serif", fontSize: "18px" };
 

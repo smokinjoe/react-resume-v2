@@ -1,9 +1,9 @@
-import { useContext } from "react";
 import { Title, Text, Space } from "@mantine/core";
-import { ResumeContext } from "../../context/ResumeContext";
+
+import { useStore } from "../../store/resume";
 
 export const Education = () => {
-  const resume = useContext(ResumeContext);
+  const { education } = useStore((state) => state.resume);
 
   return (
     <>
@@ -19,7 +19,7 @@ export const Education = () => {
       </Title>
       <Space h="md" />
 
-      {resume.education.map((edu) => (
+      {education.map((edu) => (
         <div key={edu.name}>
           <Title order={3} fw="800">
             {edu.name}

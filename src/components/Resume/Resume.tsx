@@ -1,7 +1,6 @@
-import { useContext } from "react";
 import { Container, Grid, Space, Title } from "@mantine/core";
 
-import { ResumeContext } from "../../context/ResumeContext";
+import { useStore } from "../../store/resume";
 
 import { Header } from "./Header";
 import { EmploymentHistory } from "./EmploymentHistory";
@@ -11,7 +10,7 @@ import { Skills } from "./Skills";
 import { Languages } from "./Languages";
 
 export const Resume = () => {
-  const { references } = useContext(ResumeContext);
+  const { references } = useStore((state) => state.resume);
 
   return (
     <Container>

@@ -1,4 +1,5 @@
-import { createContext } from "react";
+import { create } from "zustand";
+
 import { Resume } from "../types/Resume";
 
 const defaultResume: Resume = {
@@ -20,4 +21,12 @@ const defaultResume: Resume = {
   references: "",
 };
 
-export const ResumeContext = createContext<Resume>(defaultResume);
+interface ApplicationState {
+  resume: Resume;
+  setResume: (resume: Resume) => void;
+}
+
+export const useStore = create<ApplicationState>((set) => ({
+  resume: defaultResume,
+  setResume: (resume: Resume) => set({ resume }),
+}));

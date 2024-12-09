@@ -1,5 +1,4 @@
-import { useGetResume } from "../../hooks/useGetResume";
-import { ResumeContext } from "../../context/ResumeContext";
+import { useResume } from "../../hooks/useResume";
 
 import { Loading } from "../UI/Loading";
 import { ErrorMessage } from "../UI/ErrorMessage";
@@ -7,7 +6,7 @@ import { ErrorMessage } from "../UI/ErrorMessage";
 import { Resume } from "./Resume";
 
 export const ResumeContainer = () => {
-  const { data, isLoading, error } = useGetResume();
+  const { resume, isLoading, error } = useResume();
 
   if (isLoading) {
     return <Loading isLoading={isLoading} />;
@@ -17,13 +16,9 @@ export const ResumeContainer = () => {
     return <ErrorMessage message={error.message} />;
   }
 
-  if (!data) {
+  if (!resume) {
     return <ErrorMessage message="No data." />;
   }
 
-  return (
-    <ResumeContext.Provider value={data}>
-      <Resume />
-    </ResumeContext.Provider>
-  );
+  return <Resume />;
 };
