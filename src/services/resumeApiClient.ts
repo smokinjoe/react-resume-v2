@@ -26,10 +26,10 @@ const createHttpClient = (options?: HttpClientOptions): AxiosInstance => {
 
 let client: AxiosInstance;
 
-export const getResumeApiClient = () => {
+export const getResumeApiClient = (version: string = "v1") => {
   if (client === undefined) {
     client = createHttpClient({
-      baseURL: `${baseURL}/api`,
+      baseURL: `${baseURL}/api/${version}`,
     });
   }
 
