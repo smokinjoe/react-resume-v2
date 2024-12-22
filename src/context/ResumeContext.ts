@@ -12,6 +12,7 @@ const defaultResume: Resume = {
     state: "",
     zip: -1,
   },
+  website: "",
   technicalSkills: [],
   employmentHistory: [],
   languages: [],
