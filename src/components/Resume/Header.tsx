@@ -16,9 +16,10 @@ export const Header = () => {
   return (
     <>
       <Grid.Col span={8}>
-        <Title style={{ fontSize: "56px" }} order={1}>
+        <Title style={{ fontSize: "76px" }} order={1}>
           {resume.name}
         </Title>
+        <Space h="xs" />
         <Text>
           Looking for new challenges and an opportunity to build great products.
         </Text>
