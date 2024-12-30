@@ -29,7 +29,7 @@ let client: AxiosInstance;
 export const getResumeApiClient = () => {
   if (client === undefined) {
     client = createHttpClient({
-      baseURL: `${baseURL}/api`,
+      baseURL: `${baseURL}/api/v2`,
     });
   }
 
