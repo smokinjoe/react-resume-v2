@@ -12,13 +12,15 @@ export const Header = () => {
   const [resume] = useAtom(resumeAtom);
 
   const customCss = { fontFamily: "Open Sans, sans serif", fontSize: "18px" };
+  const customLinkCss = { textDecoration: "none", color: "black" };
 
   return (
     <>
       <Grid.Col span={8}>
-        <Title style={{ fontSize: "56px" }} order={1}>
+        <Title style={{ fontSize: "76px" }} order={1}>
           {resume.name}
         </Title>
+        <Space h="xs" />
         <Text>
           Looking for new challenges and an opportunity to build great products.
         </Text>
@@ -35,6 +37,12 @@ export const Header = () => {
         <Space h="xs" />
         <Text fw={700} style={customCss}>
           {resume.email}
+        </Text>
+        <Space h="xs" />
+        <Text>
+          <a style={customLinkCss} href={resume.website}>
+            {resume.website}
+          </a>
         </Text>
       </Grid.Col>
     </>
