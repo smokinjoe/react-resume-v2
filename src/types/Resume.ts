@@ -8,6 +8,7 @@ export type Resume = {
   email: string;
   phone: number;
   address: Address;
+  website: string;
   technicalSkills: string[];
   employmentHistory: EmploymentHistory[];
   languages: Language[];

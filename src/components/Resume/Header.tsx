@@ -11,6 +11,7 @@ export const Header = () => {
   const { resume } = useStore();
 
   const customCss = { fontFamily: "Open Sans, sans serif", fontSize: "18px" };
+  const customLinkCss = { textDecoration: "none", color: "black" };
 
   return (
     <>
@@ -34,6 +35,12 @@ export const Header = () => {
         <Space h="xs" />
         <Text fw={700} style={customCss}>
           {resume.email}
+        </Text>
+        <Space h="xs" />
+        <Text>
+          <a style={customLinkCss} href={resume.website}>
+            {resume.website}
+          </a>
         </Text>
       </Grid.Col>
     </>
